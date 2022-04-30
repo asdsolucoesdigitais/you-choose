@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-normalize": "^10.0.1",
+    "sass": "^1.51.0",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }
