@@ -22,10 +22,10 @@
         margin-top: 50px;
         border-radius: 30px;
         &__poster {
-            background-color: lightblue;
             height: calc(90vh - 100px);
             border: solid 5px #2C3E50;
             border-radius: 30px;
+            object-fit: cover;
         }
     }
     &__ranking {

@@ -1,18 +1,10 @@
+import Choose from "./choose";
 import StyleYouChoose from "./YouChoose.module.scss";
 
 export default function YouChoose() {
     return (
         <div className={StyleYouChoose.container}>
-            <div className={StyleYouChoose.box}>
-                <div className={StyleYouChoose.box__movie}>
-                    <div className={StyleYouChoose.box__movie__poster}></div>
-                </div>
-            </div>
-            <div className={StyleYouChoose.box}>
-                <div className={StyleYouChoose.box__movie}>
-                    <div className={StyleYouChoose.box__movie__poster}></div>
-                </div>
-            </div>
+            <Choose />
             <div className={StyleYouChoose.box}>
                 <div className={StyleYouChoose.box__ranking}>
                     <div className={StyleYouChoose.box__ranking__item}>
