@@ -1,34 +1,61 @@
+import StyleChoose from "./Choose.module.scss";
+import movies from "assets/movies.json";
 import Movie from "../movie";
-import StyleYouChoose from "./YouChoose.module.scss";
-import movies from "../list/movies.json";
 
 export default function Choose() {
-
     function numberRandom() {
-        let num = 0
+        let num = 0;
         while (num === 0) {
-            num = Math.floor(Math.random() * 4)
+            num = Math.floor(Math.random() * Object.keys(movies).length);
         }
         return num;
     }
 
-    const x = numberRandom();
+    function getClick(id: number) {
+        return console.log(id);
+    }
 
-    const y = numberRandom();
+    function numbersRandom() {
+        let x = 0;
+        let y = 0;
 
-    console.log(x, y);
+        while (x === y) {
+            x = numberRandom();
+            y = numberRandom();
+        }
+        return [x, y];
+    }
+
+    const moviesId = numbersRandom();
+
+    const a = moviesId[0];
+
+    const b = moviesId[1];
+
+    console.log(a, b);
 
     return (
         <>
-            <div className={StyleYouChoose.box}>
-                <button className={StyleYouChoose.box__movie}>
-                    <Movie title={movies[x].title} id={movies[x].id} poster={movies[x].poster} score={movies[x].score} />
-                </button>
-            </div>
-            <div className={StyleYouChoose.box}>
-                <button className={StyleYouChoose.box__movie}>
-                    <Movie title={movies[y].title} id={movies[y].id} poster={movies[y].poster} score={movies[y].score} />
-                </button>
+            <div className={StyleChoose.box_choose}>
+                <div onClick={() => getClick(movies[a].id)}>
+                    <Movie
+                        title={movies[a].title}
+                        id={movies[a].id}
+                        poster={movies[a].poster}
+                        score={movies[a].score}
+                        votes={movies[b].votes}
+                    />
+                </div>
+                <div onClick={() => getClick(movies[b].id)}>
+                    <Movie
+                        /*onClick={() => getClick(movies[b].id)}*/
+                        title={movies[b].title}
+                        id={movies[b].id}
+                        poster={movies[b].poster}
+                        score={movies[b].score}
+                        votes={movies[b].votes}
+                    />
+                </div>
             </div>
         </>
     );

@@ -1,15 +1,13 @@
-import StyleYouChoose from "./YouChoose.module.scss";
-import movies from "../list/movies.json";
+import movies from "assets/movies.json";
+import Poster from "./poster";
 
-type Props = typeof movies[0];
+type IProps = typeof movies[0];
 
-export default function Movie(props: Props) {
+export default function Movie(props: IProps) {
 
-    const { id, poster, title } = props;
+    const { id, poster, title, votes } = props;
 
     return (
-        <div className={StyleYouChoose.box__movie__poster}>
-            <img className={StyleYouChoose.box__movie__poster} key={id} src={poster} alt={title} />
-        </div>
+        <Poster id={id.toString()} poster={poster} title={title} votes={votes} />
     )
 }

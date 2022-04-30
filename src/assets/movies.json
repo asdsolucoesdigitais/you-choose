@@ -1,0 +1,58 @@
+[
+    {
+        "title": "Medida Provisória",
+        "poster": "/assets/posters/01.jpg",
+        "score": 6.8,
+        "id": 1,
+        "votes": 0
+    },
+    {
+        "title": "Ruptura",
+        "poster": "/assets/posters/02.jpg",
+        "score": 8.7,
+        "id": 2,
+        "votes": 0
+    },
+    {
+        "title": "Boneca Russa",
+        "poster": "/assets/posters/03.jpg",
+        "score": 7.8,
+        "id": 3,
+        "votes": 0
+    },
+    {
+        "title": "Moon Knight",
+        "poster": "/assets/posters/04.jpg",
+        "score": 7.6,
+        "id": 4,
+        "votes": 0
+    },
+    {
+        "title": "O Bom Lugar",
+        "poster": "/assets/posters/05.jpg",
+        "score": 8.2,
+        "id": 5,
+        "votes": 0
+    },
+    {
+        "title": "Killing Eve: Dupla Obsessão",
+        "poster": "/assets/posters/06.jpg",
+        "score": 8.2,
+        "id": 6,
+        "votes": 0
+    },
+    {
+        "title": "Anatomia de um Escândalo",
+        "poster": "/assets/posters/07.jpg",
+        "score": 7.0,
+        "id": 7,
+        "votes": 0
+    },
+    {
+        "title": "Breaking Bad",
+        "poster": "/assets/posters/08.jpg",
+        "score": 9.5,
+        "id": 8,
+        "votes": 0
+    }
+]
