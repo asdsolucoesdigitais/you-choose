@@ -1,11 +1,33 @@
 import StyleChoose from "./Choose.module.scss";
 import movies from "assets/movies.json";
 import Movie from "../movie";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Choose() {
+    const initialIds = arrayNumberRandom();
 
-    const [movieId, getClick] = useState(0);
+    const [movieIds, setMovieIds] = useState({
+        movieIdA: initialIds[0],
+        movieIdB: initialIds[1],
+    });
+
+    function handleIds(id: number) {
+        let movieIdA = movieIds.movieIdA;
+        let movieIdB = movieIds.movieIdB;
+
+        let ids = arrayNumberRandom();
+
+        if (movieIds.movieIdA === id) {
+            movieIdB = ids[0];
+        } else {
+            movieIdA = ids[0];
+        }
+
+        console.log(movieIdA, movieIdB);
+        /*Os ids não podem ser iguais*/
+
+        setMovieIds({ movieIdA, movieIdB });
+    }
 
     function numberRandom() {
         let num = 0;
@@ -26,32 +48,25 @@ export default function Choose() {
         return [x, y];
     }
 
-    const moviesId = arrayNumberRandom();
-
-    const a = moviesId[0];
-
-    const b = moviesId[1];
-
     return (
         <>
-            {console.log(movieId)}
             <div className={StyleChoose.box_choose}>
-                <div onClick={() => getClick(movies[a].id)}>
+                <div onClick={() => handleIds(movieIds.movieIdA)}>
                     <Movie
-                        title={movies[a].title}
-                        id={movies[a].id}
-                        poster={movies[a].poster}
-                        score={movies[a].score}
-                        votes={movies[a].votes}
+                        title={movies[movieIds.movieIdA].title}
+                        id={movies[movieIds.movieIdA].id}
+                        poster={movies[movieIds.movieIdA].poster}
+                        score={movies[movieIds.movieIdA].score}
+                        votes={movies[movieIds.movieIdA].votes}
                     />
                 </div>
-                <div onClick={() => getClick(movies[b].id)}>
+                <div onClick={() => handleIds(movieIds.movieIdB)}>
                     <Movie
-                        title={movies[b].title}
-                        id={movies[b].id}
-                        poster={movies[b].poster}
-                        score={movies[b].score}
-                        votes={movies[b].votes}
+                        title={movies[movieIds.movieIdB].title}
+                        id={movies[movieIds.movieIdB].id}
+                        poster={movies[movieIds.movieIdB].poster}
+                        score={movies[movieIds.movieIdB].score}
+                        votes={movies[movieIds.movieIdB].votes}
                     />
                 </div>
             </div>

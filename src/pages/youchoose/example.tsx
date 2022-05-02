@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Example() {
-    // Declarar uma nova variável de state, na qual chamaremos de "count"
+export default function Exemplo() {
     const [count, setCount] = useState(0);
+
+    // Similar ao componentDidMount e componentDidUpdate:
+    useEffect(() => {
+        // Atualiza o título do documento usando a API do browser
+        document.title = `Você clicou ${count} vezes`;
+    });
 
     return (
         <div>
