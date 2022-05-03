@@ -1,7 +1,7 @@
 import StyleChoose from "./Choose.module.scss";
 import movies from "assets/movies.json";
 import Movie from "../movie";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Choose() {
     const initialIds = arrayNumberRandom();
