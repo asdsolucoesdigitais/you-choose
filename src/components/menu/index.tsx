@@ -12,33 +12,35 @@ export default function Menu() {
     }
 
     const rotas = [
-		{
-			label: 'Início',
-			to: '/'
-		},
-		{
-			label: 'Home',
-			to: '/home'
-		},
-		{
-			label: 'Lists',
-			to: '/lists'
-		},
-		{
-			label: 'Score',
-			to: '/score'
-		}
-	];
+        {
+            label: "Home",
+            to: "/home",
+        },
+        {
+            label: "Lists",
+            to: "/lists",
+        },
+        {
+            label: "Score",
+            to: "/score",
+        },
+        {
+            label: "You Choose",
+            to: "/you-choose",
+        },
+    ];
 
     return (
-        <div id="myTopnav">
-            <ul className={StyleMenu.topnav}>
-                <Link to={}
-                <li className={StyleMenu.menu__li}>Home</li>
-                <li>Lists</li>
-                <li>Score</li>
-                <li>You Choose</li>
+        <nav id="myTopnav" className={StyleMenu.menu}>
+            <ul className={StyleMenu.menu__list}>
+                {rotas.map((rota, index) => (
+                    <li key={index} className={StyleMenu.menu__link}>
+                        <Link to={rota.to}>
+                            {rota.label}
+                        </Link>
+                    </li>
+                ))}
             </ul>
-        </div>
+        </nav>
     );
 }
